@@ -1,0 +1,39 @@
+{
+    "geode": "$GEODE_VERSION",
+    "gd": {
+        "android": "2.2081"
+    },
+    "id": "bolonli.mod",
+    "name": "BolonliMod",
+    "version": "v1.0.0",
+    "developer": "Bolonli",
+    "description": "Android-focused Geometry Dash cheat/training toolkit.",
+    "settings": {
+        "no-death": {
+            "type": "bool",
+            "name": "No Death",
+            "description": "Prevents the normal death callback from resetting the run.",
+            "default": false
+        },
+        "speed": {
+            "type": "float",
+            "name": "Game Speed",
+            "description": "Changes gameplay update speed. 1.0 is normal speed.",
+            "default": 1.0,
+            "min": 0.25,
+            "max": 3.0,
+            "controls": {
+                "slider": true,
+                "slider-step": 0.05,
+                "arrows": true,
+                "arrow-step": 0.05,
+                "input": true
+            }
+        }
+    },
+    "resources": {
+        "files": [
+            "resources/logo.png"
+        ]
+    }
+}
