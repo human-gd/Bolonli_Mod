@@ -1,0 +1,38 @@
+name: Build Android Geode Mod
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: Build ${{ matrix.target }}
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        target:
+          - Android64
+          - Android32
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build Geode mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          target: ${{ matrix.target }}
+          sdk: latest
+          cli: latest
+          build-config: Release
+          use-lto: true
+
+      - name: Upload .geode
+        uses: actions/upload-artifact@v4
+        with:
+          name: BolonliMod-${{ matrix.target }}
+          path: ${{ steps.build.outputs.build-output }}
