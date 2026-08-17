@@ -21,19 +21,7 @@
             "description": "Changes gameplay update speed. 1.0 is normal speed.",
             "default": 1.0,
             "min": 0.25,
-            "max": 3.0,
-            "controls": {
-                "slider": true,
-                "slider-step": 0.05,
-                "arrows": true,
-                "arrow-step": 0.05,
-                "input": true
-            }
+            "max": 3.0
         }
-    },
-    "resources": {
-        "files": [
-            "resources/logo.png"
-        ]
     }
 }
