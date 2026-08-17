@@ -29,3 +29,12 @@ jobs:
           cli: latest
           build-config: Release
           use-lto: true
+
+      - name: Upload Geode package
+        uses: actions/upload-artifact@v4
+        with:
+          name: BolonliMod-${{ matrix.target }}
+          path: |
+            build/**/*.geode
+            build-**/*.geode
+          if-no-files-found: error
